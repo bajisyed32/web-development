@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOGO Product Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .option {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+        .most-popular {
+            border-color: #ff4d6d;
+            background: #fff0f3;
+        }
+        .most-popular::after {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #ff4d6d;
+            color: #fff;
+            font-size: 10px;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .discount {
+            font-size: 12px;
+            color: #ff4d6d;
+            background: #ffe3e8;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .add-to-cart {
+            background: #ff4d6d;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>YAY! It's BOGO</h2>
+        <div class="option" onclick="selectOption(1, 10)">
+            <input type="radio" name="unit" checked> 1 Unit <span class="discount">10% Off</span>
+            <p class="price">$10.00 USD</p>
+        </div>
+        <div class="option most-popular" onclick="selectOption(2, 18)">
+            <input type="radio" name="unit"> 2 Unit <span class="discount">20% Off</span>
+            <p class="price">$18.00 USD</p>
+            <div>
+                <label>Size:</label>
+                <select>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                </select>
+                <label>Colour:</label>
+                <select>
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Red</option>
+                </select>
+            </div>
+        </div>
+        <div class="option" onclick="selectOption(3, 24)">
+            <input type="radio" name="unit"> 3 Unit <span class="discount">30% Off</span>
+            <p class="price">$24.00 USD</p>
+        </div>
+        <p class="price">Total: <span id="totalPrice">$10.00 USD</span></p>
+        <button class="add-to-cart">+ Add to Cart</button>
+    </div>
+
+    <script>
+        function selectOption(units, price) {
+            document.getElementById('totalPrice').innerText = $${price}.00 USD;
+        }
+    </script>
+</body>
+</html>
